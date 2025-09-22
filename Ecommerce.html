@@ -64,10 +64,17 @@
             margin-right: 10px;
         }
 
-        .cart-icon {
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-icon, .portfolio-icon {
             position: relative;
             font-size: 1.5rem;
             cursor: pointer;
+            color: white;
         }
 
         .cart-count {
@@ -168,6 +175,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .product-card:hover {
@@ -204,6 +212,19 @@
             margin-bottom: 15px;
         }
 
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #ffc107;
+        }
+
+        .product-rating span {
+            color: #777;
+            margin-left: 5px;
+            font-size: 0.9rem;
+        }
+
         .add-to-cart {
             width: 100%;
             padding: 10px;
@@ -218,6 +239,123 @@
 
         .add-to-cart:hover {
             background-color: #3a5bd0;
+        }
+
+        .view-reviews {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+
+        /* Review Modal */
+        .review-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .review-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 25px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .review-list {
+            margin-bottom: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .review-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .review-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .review-rating {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+
+        .review-text {
+            margin-bottom: 10px;
+        }
+
+        .review-date {
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        .add-review-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .star-rating i {
+            color: #ddd;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .star-rating i.active {
+            color: #ffc107;
         }
 
         /* Cart Modal */
@@ -322,6 +460,82 @@
             border-top: 2px solid #eee;
         }
 
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 60px 0;
+            background-color: white;
+            margin: 50px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .portfolio-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .portfolio-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .portfolio-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-details {
+            margin-bottom: 20px;
+        }
+
+        .portfolio-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .portfolio-details i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -371,6 +585,10 @@
             .footer-section {
                 min-width: 100%;
             }
+
+            .portfolio-content {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -395,6 +613,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .nav-icons {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -407,9 +629,14 @@
                     <i class="fas fa-shopping-bag"></i>
                     ShopEasy
                 </div>
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                <div class="nav-icons">
+                    <div class="portfolio-icon" id="portfolioIcon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -439,6 +666,69 @@
         <div class="products-grid" id="productsGrid">
             <!-- Products will be dynamically inserted here -->
         </div>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio-section" id="portfolioSection">
+            <h2 class="section-title">Developer Portfolio</h2>
+            <div class="portfolio-content">
+                <div class="portfolio-info">
+                    <h2>MANDEM JAGADISH KUMAR</h2>
+                    <div class="portfolio-details">
+                        <p><i class="fas fa-envelope"></i> mandemjagadish@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 8341224429</p>
+                        <p><i class="fas fa-graduation-cap"></i> Bachelor of Technology, Computer Science and Engineering</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, TN India</p>
+                    </div>
+                    <h3>Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Object Oriented Programming</span>
+                    </div>
+                </div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1120&q=80" alt="Developer Image">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="review-modal" id="reviewModal">
+        <div class="review-content">
+            <div class="review-header">
+                <h2 id="reviewProductName">Product Reviews</h2>
+                <span class="close" id="closeReview">&times;</span>
+            </div>
+            <div class="review-list" id="reviewList">
+                <!-- Reviews will be dynamically inserted here -->
+            </div>
+            <div class="add-review-form">
+                <h3>Add Your Review</h3>
+                <div class="form-group">
+                    <label for="reviewerName">Your Name</label>
+                    <input type="text" id="reviewerName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Your Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Your Review</label>
+                    <textarea id="reviewText" placeholder="Share your experience with this product"></textarea>
+                </div>
+                <button class="btn" id="submitReview">Submit Review</button>
+            </div>
+        </div>
     </div>
 
     <!-- Cart Modal -->
@@ -446,7 +736,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Your Shopping Cart</h2>
-                <span class="close">&times;</span>
+                <span class="close" id="closeCart">&times;</span>
             </div>
             <div class="cart-items" id="cartItems">
                 <!-- Cart items will be dynamically inserted here -->
@@ -486,86 +776,196 @@
     </footer>
 
     <script>
-        // Sample product data
+        // Sample product data with more detailed information
         const products = [
             {
                 id: 1,
                 name: "Wireless Headphones",
                 price: 89.99,
-                description: "High-quality wireless headphones with noise cancellation.",
+                description: "High-quality wireless headphones with noise cancellation. Perfect for music lovers and professionals.",
                 category: "electronics",
-                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.5,
+                reviews: [
+                    {
+                        name: "Alex Johnson",
+                        rating: 5,
+                        text: "Amazing sound quality! The noise cancellation works perfectly even in noisy environments.",
+                        date: "10/15/2023"
+                    },
+                    {
+                        name: "Sarah Miller",
+                        rating: 4,
+                        text: "Comfortable to wear for long periods. Battery life could be better though.",
+                        date: "10/10/2023"
+                    }
+                ]
             },
             {
                 id: 2,
                 name: "Casual T-Shirt",
                 price: 24.99,
-                description: "Comfortable cotton t-shirt for everyday wear.",
+                description: "Comfortable cotton t-shirt for everyday wear. Available in multiple colors.",
                 category: "clothing",
-                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80"
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80",
+                rating: 4.2,
+                reviews: [
+                    {
+                        name: "Mike Thompson",
+                        rating: 5,
+                        text: "Very comfortable fabric and perfect fit. I bought three of them!",
+                        date: "10/12/2023"
+                    }
+                ]
             },
             {
                 id: 3,
                 name: "Smart Watch",
                 price: 199.99,
-                description: "Feature-rich smartwatch with health monitoring.",
+                description: "Feature-rich smartwatch with health monitoring. Tracks steps, heart rate, and sleep patterns.",
                 category: "electronics",
-                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1099&q=80"
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1099&q=80",
+                rating: 4.7,
+                reviews: [
+                    {
+                        name: "Jennifer Lee",
+                        rating: 5,
+                        text: "This watch has changed how I track my fitness goals. The battery lasts for days!",
+                        date: "10/05/2023"
+                    },
+                    {
+                        name: "David Wilson",
+                        rating: 4,
+                        text: "Great features but the app could be more intuitive. Overall happy with my purchase.",
+                        date: "10/01/2023"
+                    }
+                ]
             },
             {
                 id: 4,
                 name: "Coffee Maker",
                 price: 49.99,
-                description: "Automatic drip coffee maker with programmable timer.",
+                description: "Automatic drip coffee maker with programmable timer. Start your day with fresh coffee.",
                 category: "home",
-                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.0,
+                reviews: [
+                    {
+                        name: "Robert Brown",
+                        rating: 4,
+                        text: "Makes great coffee and the timer function is very convenient for mornings.",
+                        date: "09/28/2023"
+                    }
+                ]
             },
             {
                 id: 5,
                 name: "Best Seller Book",
                 price: 14.99,
-                description: "The latest best-selling novel everyone is talking about.",
+                description: "The latest best-selling novel everyone is talking about. A must-read for fiction lovers.",
                 category: "books",
-                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+                rating: 4.8,
+                reviews: [
+                    {
+                        name: "Emily Clark",
+                        rating: 5,
+                        text: "Couldn't put it down! The story kept me engaged until the very last page.",
+                        date: "09/25/2023"
+                    },
+                    {
+                        name: "Thomas Reed",
+                        rating: 5,
+                        text: "One of the best books I've read this year. Highly recommend!",
+                        date: "09/20/2023"
+                    }
+                ]
             },
             {
                 id: 6,
                 name: "Running Shoes",
                 price: 79.99,
-                description: "Comfortable running shoes with extra cushioning.",
+                description: "Comfortable running shoes with extra cushioning. Perfect for jogging and gym workouts.",
                 category: "clothing",
-                image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80"
+                image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80",
+                rating: 4.3,
+                reviews: [
+                    {
+                        name: "Amanda Garcia",
+                        rating: 4,
+                        text: "Very comfortable for running. Good arch support and cushioning.",
+                        date: "09/18/2023"
+                    }
+                ]
             },
             {
                 id: 7,
                 name: "Blender",
                 price: 39.99,
-                description: "Powerful blender for smoothies and food processing.",
+                description: "Powerful blender for smoothies and food processing. Easy to clean and operate.",
                 category: "home",
-                image: "https://images.unsplash.com/photo-1566763228634-8031138bd267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+                image: "https://images.unsplash.com/photo-1566763228634-8031138bd267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+                rating: 4.1,
+                reviews: [
+                    {
+                        name: "Christopher Martinez",
+                        rating: 4,
+                        text: "Great blender for the price. Makes smooth smoothies without chunks.",
+                        date: "09/15/2023"
+                    }
+                ]
             },
             {
                 id: 8,
                 name: "Programming Book",
                 price: 44.99,
-                description: "Complete guide to modern web development.",
+                description: "Complete guide to modern web development. Covers HTML, CSS, JavaScript and more.",
                 category: "books",
-                image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1198&q=80"
+                image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1198&q=80",
+                rating: 4.9,
+                reviews: [
+                    {
+                        name: "Daniel White",
+                        rating: 5,
+                        text: "Excellent resource for both beginners and experienced developers.",
+                        date: "09/10/2023"
+                    },
+                    {
+                        name: "Sophia Anderson",
+                        rating: 5,
+                        text: "Clear explanations and practical examples. Helped me land my first web dev job!",
+                        date: "09/05/2023"
+                    }
+                ]
             }
         ];
 
         // Cart array to store added products
         let cart = [];
 
+        // Current product for reviews
+        let currentProductId = null;
+        let selectedRating = 0;
+
         // DOM Elements
         const productsGrid = document.getElementById('productsGrid');
         const cartIcon = document.getElementById('cartIcon');
+        const portfolioIcon = document.getElementById('portfolioIcon');
         const cartModal = document.getElementById('cartModal');
+        const reviewModal = document.getElementById('reviewModal');
         const cartItems = document.getElementById('cartItems');
+        const reviewList = document.getElementById('reviewList');
         const cartTotal = document.getElementById('cartTotal');
         const cartCount = document.querySelector('.cart-count');
-        const closeModal = document.querySelector('.close');
+        const closeCart = document.getElementById('closeCart');
+        const closeReview = document.getElementById('closeReview');
         const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioSection = document.getElementById('portfolioSection');
+        const starRating = document.getElementById('starRating');
+        const submitReview = document.getElementById('submitReview');
+        const reviewerName = document.getElementById('reviewerName');
+        const reviewText = document.getElementById('reviewText');
+        const reviewProductName = document.getElementById('reviewProductName');
 
         // Display products
         function displayProducts(productsArray) {
@@ -578,8 +978,13 @@
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-desc">${product.description}</p>
+                        <div class="product-rating">
+                            ${getStarRating(product.rating)}
+                            <span>${product.rating} (${product.reviews.length} reviews)</span>
+                        </div>
                         <p class="product-price">$${product.price.toFixed(2)}</p>
                         <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        <button class="view-reviews" data-id="${product.id}">View Reviews</button>
                     </div>
                 `;
                 productsGrid.appendChild(productCard);
@@ -592,6 +997,36 @@
                     addToCart(productId);
                 });
             });
+
+            // Add event listeners to View Reviews buttons
+            document.querySelectorAll('.view-reviews').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    openReviews(productId);
+                });
+            });
+        }
+
+        // Generate star rating HTML
+        function getStarRating(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
         }
 
         // Add to Cart function
@@ -684,14 +1119,74 @@
             });
         }
 
-        // Filter products
-        function filterProducts(category) {
-            if (category === 'all') {
-                displayProducts(products);
+        // Open reviews modal
+        function openReviews(productId) {
+            currentProductId = productId;
+            const product = products.find(item => item.id === productId);
+            
+            reviewProductName.textContent = `${product.name} Reviews`;
+            reviewList.innerHTML = '';
+            
+            if (product.reviews.length === 0) {
+                reviewList.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
             } else {
-                const filteredProducts = products.filter(product => product.category === category);
-                displayProducts(filteredProducts);
+                product.reviews.forEach(review => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.classList.add('review-item');
+                    reviewItem.innerHTML = `
+                        <div class="review-author">${review.name}</div>
+                        <div class="review-rating">${getStarRating(review.rating)}</div>
+                        <div class="review-text">${review.text}</div>
+                        <div class="review-date">${review.date}</div>
+                    `;
+                    reviewList.appendChild(reviewItem);
+                });
             }
+            
+            // Reset form
+            reviewerName.value = '';
+            reviewText.value = '';
+            selectedRating = 0;
+            document.querySelectorAll('#starRating i').forEach(star => {
+                star.classList.remove('active');
+            });
+            
+            reviewModal.style.display = 'flex';
+        }
+
+        // Submit review
+        function submitReviewHandler() {
+            const name = reviewerName.value.trim();
+            const text = reviewText.value.trim();
+            
+            if (!name || !text || selectedRating === 0) {
+                alert('Please fill all fields and provide a rating');
+                return;
+            }
+            
+            const product = products.find(item => item.id === currentProductId);
+            const newReview = {
+                name,
+                text,
+                rating: selectedRating,
+                date: new Date().toLocaleDateString()
+            };
+            
+            product.reviews.push(newReview);
+            
+            // Update product rating (average of all reviews)
+            const totalRating = product.reviews.reduce((sum, review) => sum + review.rating, 0);
+            product.rating = (totalRating / product.reviews.length).toFixed(1);
+            
+            // Refresh product display
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            filterProducts(activeFilter);
+            
+            // Show success message
+            showNotification('Thank you for your review!');
+            
+            // Close modal
+            reviewModal.style.display = 'none';
         }
 
         // Show notification
@@ -703,7 +1198,7 @@
             notification.style.backgroundColor = 'var(--success)';
             notification.style.color = 'white';
             notification.style.padding = '10px 20px';
-            notification.style.borrowRadius = '5px';
+            notification.style.borderRadius = '5px';
             notification.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.2)';
             notification.style.zIndex = '1000';
             notification.textContent = message;
@@ -719,18 +1214,39 @@
             }, 2000);
         }
 
+        // Filter products
+        function filterProducts(category) {
+            if (category === 'all') {
+                displayProducts(products);
+            } else {
+                const filteredProducts = products.filter(product => product.category === category);
+                displayProducts(filteredProducts);
+            }
+        }
+
         // Event Listeners
         cartIcon.addEventListener('click', () => {
             cartModal.style.display = 'flex';
         });
 
-        closeModal.addEventListener('click', () => {
+        portfolioIcon.addEventListener('click', () => {
+            document.getElementById('portfolioSection').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        closeCart.addEventListener('click', () => {
             cartModal.style.display = 'none';
+        });
+
+        closeReview.addEventListener('click', () => {
+            reviewModal.style.display = 'none';
         });
 
         window.addEventListener('click', (e) => {
             if (e.target === cartModal) {
                 cartModal.style.display = 'none';
+            }
+            if (e.target === reviewModal) {
+                reviewModal.style.display = 'none';
             }
         });
 
@@ -745,6 +1261,50 @@
                 filterProducts(filter);
             });
         });
+
+        // Star rating interaction
+        document.querySelectorAll('#starRating i').forEach(star => {
+            star.addEventListener('click', (e) => {
+                const rating = parseInt(e.target.getAttribute('data-rating'));
+                selectedRating = rating;
+                
+                // Update star display
+                document.querySelectorAll('#starRating i').forEach(s => {
+                    const starRating = parseInt(s.getAttribute('data-rating'));
+                    if (starRating <= rating) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseover', (e) => {
+                const rating = parseInt(e.target.getAttribute('data-rating'));
+                
+                document.querySelectorAll('#starRating i').forEach(s => {
+                    const starRating = parseInt(s.getAttribute('data-rating'));
+                    if (starRating <= rating) {
+                        s.style.color = '#ffc107';
+                    } else {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', () => {
+                document.querySelectorAll('#starRating i').forEach(s => {
+                    const starRating = parseInt(s.getAttribute('data-rating'));
+                    if (starRating <= selectedRating) {
+                        s.style.color = '#ffc107';
+                    } else {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+
+        submitReview.addEventListener('click', submitReviewHandler);
 
         // Initialize the page
         displayProducts(products);
